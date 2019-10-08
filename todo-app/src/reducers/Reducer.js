@@ -1,4 +1,10 @@
-export const instialState = [
+export const initialState = [
+  {
+    item: "shopping list",
+    completed: false,
+    id: 38929334
+  },
+
   {
     item: "Learn about reducers",
     completed: false,
@@ -8,9 +14,17 @@ export const instialState = [
 
 export function reducer(state, action) {
   switch (action.type) {
-    case "BLA":
-      return { ...state };
+    case "addItem":
+      {console.log(state)}
+      return [
+        ...state,
+        {
+          item: action.payload,
+          completed: false,
+          id: Date.now()
+        }
+      ];
     default:
       return state;
   }
-};
+}

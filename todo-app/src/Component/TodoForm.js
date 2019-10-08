@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useState,  useReducer } from "react";
+import { reducer, initialState } from "../reducers/Reducer";
 
 const Form = () => {
-const [itemName, setItemName] = useState();
+  const [itemName, setItemName] = useState("");
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-const handleChanges = (e) => {
-    setItemName(e.target.value)
-}
+  const handleChanges = e => {
+    setItemName(e.target.value);
+  };
 
+  return (
+    <div>
+      <input
+        type="text"
+        value={itemName}
+        onChange={handleChanges}
+      />
+      <button
+        onClick={() => {
+          dispatch({ type: "addItem", payload: itemName });
+          setItemName("");
+        }}
+      >
+        Add Item
+      </button>
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <input
-            type="text"
-            name="item"
-            value={itemName}
-            onChange={handleChanges}/>
-        </div>
-    )
-}
-
-export default Form
+export default Form;
