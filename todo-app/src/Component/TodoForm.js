@@ -9,6 +9,13 @@ const Form = ({dispatch}) => {
     setItemName(e.target.value);
   };
 
+  const clearCompleted = e => {
+    e.preventDefault();
+    dispatch({
+        type: 'CLEAR_COMPLETED'
+    });
+}
+
   return (
     <div>
       <input
@@ -24,6 +31,7 @@ const Form = ({dispatch}) => {
       >
         Add Item
       </button>
+      <button onClick={clearCompleted}>Clear</button>
      
     </div>
   );
