@@ -10,7 +10,7 @@ function toDoList() {
     <div>
       <TodoForm dispatch={dispatch} />
       {state.map(item => {
-        return <Todo key={item.id} item={item} />;
+        return <Todo key={item.id} item={item}  dispatch={dispatch}/>;
       })}
     </div>
   );

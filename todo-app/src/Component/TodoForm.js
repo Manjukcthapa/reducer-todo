@@ -24,6 +24,7 @@ const Form = ({dispatch}) => {
       >
         Add Item
       </button>
+     
     </div>
   );
 };

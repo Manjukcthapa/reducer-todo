@@ -22,3 +22,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.list.true {
+  text-decoration: line-through;
+  
+}
+ 
+.list.false {
+  text-decoration: none;
+}
