@@ -4,7 +4,6 @@ export const initialState = [
     completed: false,
     id: 38929334
   },
-
   {
     item: "Learn about reducers",
     completed: false,
@@ -13,9 +12,9 @@ export const initialState = [
 ];
 
 export function reducer(state, action) {
+  console.log(action);
   switch (action.type) {
-    case "addItem":
-      {console.log(state)}
+    case "ADD_ITEM":
       return [
         ...state,
         {
