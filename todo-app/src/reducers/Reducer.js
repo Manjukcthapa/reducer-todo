@@ -24,19 +24,17 @@ export function reducer(state, action) {
         }
       ];
 
-      case 'TOGGLE_COMPLETED':
-          return state.map(todo => {
-                  if(todo.id === action.payload) {
-           return {...todo, completed: !todo.completed}
-                  }
-        else {
+    case "TOGGLE_COMPLETED":
+      return state.map(todo => {
+        if (todo.id === action.payload) {
+          return { ...todo, completed: !todo.completed };
+        } else {
           return todo;
-          }
-         })
+        }
+      });
 
-        case 'CLEAR_COMPLETED':
-        return state.filter(todo => !todo.completed);
-      
+    case "CLEAR_COMPLETED":
+      return state.filter(todo => !todo.completed);
 
     default:
       return state;
